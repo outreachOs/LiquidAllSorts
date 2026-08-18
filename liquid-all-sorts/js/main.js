@@ -26,13 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Contact / quote form -> Cloudflare Pages Function -> Telegram
+  // Contact / quote form -> opens WhatsApp with the enquiry pre-filled
+  const WHATSAPP_NUMBER = '447777213180';
   const form = document.getElementById('quoteForm');
   const statusEl = document.getElementById('formStatus');
   const submitBtn = document.getElementById('submitBtn');
 
   if (form) {
-    form.addEventListener('submit', async (e) => {
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
 
       const data = {
@@ -49,32 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Sending...';
-      setStatus('', '');
+      const lines = [
+        `Hi Liquid All Sorts, I'd like a quote.`,
+        `Name: ${data.name}`,
+        `Phone: ${data.phone}`,
+        data.email ? `Email: ${data.email}` : null,
+        `Service: ${data.service}`,
+        data.area ? `Area/Postcode: ${data.area}` : null,
+        data.message ? `Details: ${data.message}` : null,
+      ].filter(Boolean).join('\n');
 
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data),
-        });
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`;
 
-        const result = await res.json().catch(() => ({}));
-
-        if (res.ok && result.ok) {
-          form.reset();
-          setStatus('Thanks — your enquiry has been sent. We\'ll be in touch shortly, or call 07777 213180 for an instant answer.', 'success');
-        } else {
-          // Telegram not configured yet, or a delivery issue — fail gracefully
-          setStatus('We couldn\'t send that automatically. Please call or text 07777 213180 and we\'ll sort your quote directly.', 'error');
-        }
-      } catch (err) {
-        setStatus('We couldn\'t send that automatically. Please call or text 07777 213180 and we\'ll sort your quote directly.', 'error');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Enquiry';
-      }
+      setStatus('Opening WhatsApp with your enquiry ready to send...', 'success');
+      window.open(waUrl, '_blank', 'noopener');
     });
   }
 
