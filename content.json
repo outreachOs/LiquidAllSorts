@@ -1,0 +1,29 @@
+{
+  "whatsapp": "447777213180",
+  "hero": {
+    "eyebrow": "Mobile Detailing \u00b7 Peak District & North Derbyshire",
+    "sub": "Liquid All Sorts brings hand-finished car, motorhome & caravan detailing, plus driveway pressure washing, straight to you across Belper, the Peak District and North Derbyshire.",
+    "image": "https://images.unsplash.com/photo-1554294314-80a5fb7e6bd5?auto=format&fit=crop&w=2000&q=80"
+  },
+  "services": [
+    { "id": "car-detailing", "name": "Car Detailing", "desc": "Interior and exterior valeting finished to a mirror shine — from a quick refresh to full paint correction and long-lasting protection.", "image": "https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?auto=format&fit=crop&w=1200&q=80" },
+    { "id": "motorhome-caravan", "name": "Motorhome & Caravan Detailing", "desc": "Roof to wheel arches. We handle the height, the road grime and the algae a home wash can't reach, so it's ready for the road again.", "image": "https://images.unsplash.com/photo-1513311068348-19c8fbdc0bb6?auto=format&fit=crop&w=1200&q=80" },
+    { "id": "pressure-washing", "name": "Pressure Washing", "desc": "Driveways, patios, decking and paths blasted back to their original colour — without damaging the surface underneath.", "image": "https://images.unsplash.com/photo-1718152521364-b9655b8a7926?auto=format&fit=crop&w=1200&q=80" },
+    { "id": "ceramic-coating", "name": "Ceramic Coating & Paint Protection", "desc": "A durable, hydrophobic layer over the paintwork that locks in the shine and makes every wash after it easier — ideal before a long drive or a sale.", "image": "https://images.unsplash.com/photo-1619431856706-ca2cc58258f6?auto=format&fit=crop&w=1200&q=80" },
+    { "id": "fleet-valeting", "name": "Fleet & Commercial Valeting", "desc": "Regular valeting for vans, work cars and company fleets, kept sharp and presentable on a schedule that fits around your working week.", "image": "https://images.unsplash.com/photo-1688054005456-466170816196?auto=format&fit=crop&w=1200&q=80" },
+    { "id": "gutter-roof", "name": "Gutter & Roof Cleaning", "desc": "Gutters and roof lines cleared of moss, leaves and grime, so water keeps flowing freely and damp doesn't get a foothold.", "image": "https://images.unsplash.com/photo-1744044155829-610dded4cead?auto=format&fit=crop&w=1200&q=80" }
+  ],
+  "areas": ["Belper", "Kilburn", "Holbrook", "Milford", "Heage", "Crich", "Allestree", "Darley Abbey", "Matlock", "Matlock Bath", "Wirksworth", "Cromford", "Ashbourne", "Bakewell", "Melbourne", "Dronfield", "Ripley", "Duffield"],
+  "testimonials": [
+    { "name": "Michael R.", "area": "Belper", "text": "Booked a full valet before selling the car and it looked better than the day I bought it. Turned up on time and worked with real care over every panel." },
+    { "name": "Diane & Paul H.", "area": "Duffield", "text": "Our motorhome hadn't been properly cleaned in two seasons. They got right into the roof vents and awning rail — genuinely impressed with the attention to detail." },
+    { "name": "Josh T.", "area": "Derby", "text": "Driveway was black with algae and moss. Now it looks brand new again. Quick, tidy, and no mess left behind afterwards." },
+    { "name": "Amrita K.", "area": "Allestree", "text": "Professional from the first message to the final wipe-down. Easy to book and the finish speaks for itself — already got them booked in again." }
+  ],
+  "gallery": [
+    "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1620584898989-d39f7f9ed1b7?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1567808291548-fc3ee04dbcf0?auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1782235869433-6eee6d9d618b?auto=format&fit=crop&w=1200&q=80"
+  ]
+}

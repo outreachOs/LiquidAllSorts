@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin — Liquid All Sorts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<section id="loginScreen" class="login">
+  <div class="login__box">
+    <span class="login__brand">Liquid All Sorts</span>
+    <p class="login__eyebrow">Admin</p>
+    <form id="loginForm">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" autocomplete="current-password" required>
+      <button type="submit" class="btn btn--primary btn--block">Log In</button>
+      <p class="hint">Ask whoever built the site if you don't have the password.</p>
+      <p class="status" id="loginStatus" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+<div id="dashboard" hidden>
+
+  <header class="topbar">
+    <span class="topbar__brand">Liquid All Sorts <span class="topbar__tag">Admin</span></span>
+    <div class="topbar__actions">
+      <button class="btn btn--ghost" id="logoutBtn">Log Out</button>
+      <button class="btn btn--primary" id="saveBtn">Save Changes</button>
+    </div>
+  </header>
+
+  <p class="status status--banner" id="saveStatus" role="status" aria-live="polite"></p>
+
+  <main class="content">
+
+    <div class="notice">
+      <strong>A quick tip before you dive in:</strong> reviews and small
+      wording tweaks are fine to update whenever you like, but try not to
+      change your WhatsApp number, service names, or make big overhauls
+      more than once every 2–3 weeks. Google builds up trust in your
+      business listing over time, and constantly changing the core
+      details can confuse that and hurt how consistently you show up in
+      local search. Small, steady updates beat frequent big ones.
+    </div>
+
+    <section class="panel">
+      <h2>Contact &amp; Hero</h2>
+      <p class="panel__hint">The main headline itself stays fixed in code since it's styled in two colours — everything else here is editable.</p>
+
+      <div class="hero-edit">
+        <div class="image-slot image-slot--wide">
+          <img id="heroPreview" class="image-slot__preview" alt="Hero photo preview">
+          <label class="image-slot__upload">
+            Change Photo
+            <input type="file" accept="image/*" id="heroImageInput" hidden>
+          </label>
+        </div>
+        <div class="hero-edit__fields">
+          <label for="whatsapp">WhatsApp number (digits only, e.g. 447777213180)</label>
+          <input type="text" id="whatsapp" name="whatsapp" placeholder="447777213180">
+
+          <label for="heroEyebrow">Hero eyebrow (small line above the headline)</label>
+          <input type="text" id="heroEyebrow" name="heroEyebrow">
+
+          <label for="heroSub">Hero subtext</label>
+          <textarea id="heroSub" name="heroSub" rows="3"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Services</h2>
+      <p class="panel__hint">Six fixed cards — change each photo, name and description. Each service's own full page is separate and isn't editable here.</p>
+      <div id="servicesGrid" class="services-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Gallery Photos <span class="panel__hint-inline">(homepage "Recent Work" section)</span></h2>
+      <div id="galleryGrid" class="gallery-grid"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Areas We Cover <span class="panel__hint-inline">(homepage list only)</span></h2>
+      <p class="panel__hint">The full <code>areas-we-cover.html</code> page with descriptions per town is separate and isn't editable here.</p>
+      <div id="areasList" class="chip-list"></div>
+      <button type="button" class="btn btn--outline" id="addAreaBtn">+ Add Town</button>
+    </section>
+
+    <section class="panel">
+      <h2>Reviews</h2>
+      <div id="testimonialsGrid" class="testimonials-grid"></div>
+      <button type="button" class="btn btn--outline" id="addTestimonialBtn">+ Add Review</button>
+    </section>
+
+  </main>
+
+  <div class="save-bar">
+    <button class="btn btn--primary btn--lg" id="saveBtnBottom">Save Changes</button>
+    <p class="status" id="saveStatusBottom" role="status" aria-live="polite"></p>
+  </div>
+
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
